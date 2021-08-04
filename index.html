@@ -3,6 +3,15 @@
 
 <head>
 
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+<script src="js/leaflet-providers.js"></script>
+
 <title>Chicago Early Learning: Needs & Accessibility</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +33,16 @@
 <p>It is just as important for young minds to be cognitively engaged in Chicago's outdoor environments as within the classroom. According to Harvard Medical School's health publications, infants, toddlers, and preschool children require outdoor education to fully prepare them for adolescence. Outdoor education, as simple as engaging with a neighborhood playground, helps children in six crucial ways: access to sunshine (Vitamin D), exercise, executive function, risk taking, socialization, and appreciation of nature.</p>
 </div>
 
-<div class = "map">
+<div id = "map">
 <p>Here is a map of mixed modes of education in Chicago:</p>
 
-<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Chicago's Mixed Modes of Education" src="//univofillinois.maps.arcgis.com/apps/Embed/index.html?webmap=4893fc419b324b1491dc1269ad5131d7&extent=-88.471,41.5161,-86.9933,42.1505&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe></div>
+<script>
+
+var myMap = L.map('map').setView([41.86, -87.66, 13);
+var Stamen_TonerLite = L.titlelayer('https://stamen-tiles-{s}.a.ssl.fastly.ner/toner-line/{z}/{x}/{y}{r}.{ext}', {attribution:'Map titles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',subdomains:'abcd', minZoom: 0, maxZoom: 20, ext: 'png' }).addTo(map);
+
+
+</div>
 
 <p>An integral part of family planning is access to indoor and outdoor modes of education. As a resource, this map provides Chicago Early Learning programs that serve children ages 0 - 3 (in blue), and children over the age of 3 (in red). This map also highlights parks that have playgrounds for children to engage critical cognitive development in a fun, safe, and natural environment. Parks with more playgrounds are shown in darker shades of green.
 </div>
@@ -51,4 +66,3 @@
 </body>
 
 </html>
-
